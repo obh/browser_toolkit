@@ -1,0 +1,15 @@
+/* Hide feed posts on the LinkedIn home feed only (attribute is set by linkedin.js).
+   The "Start a post" box, navigation, messaging, and notifications stay usable.
+   LinkedIn changes its markup often; several selectors are listed for resilience. */
+/* Current SDUI feed uses component keys instead of the legacy feed classes. */
+html[data-browser-toolkit-hide-feed] main [role="listitem"][componentkey^="update-card-focus"],
+html[data-browser-toolkit-hide-feed] main [data-finite-scroll-hotkey-context="FEED"],
+html[data-browser-toolkit-hide-feed] main .scaffold-finite-scroll,
+html[data-browser-toolkit-hide-feed] main .feed-shared-update-v2,
+html[data-browser-toolkit-hide-feed] main [data-urn^="urn:li:activity"],
+html[data-browser-toolkit-hide-feed] main [data-id^="urn:li:activity"],
+html[data-browser-toolkit-hide-feed] main [data-id^="urn:li:aggregate"],
+html[data-browser-toolkit-hide-feed] .feed-new-update-pill,
+html[data-browser-toolkit-hide-feed] main .feed-sort-toggle-dsa__wrapper {
+  display: none !important;
+}

@@ -1,0 +1,14 @@
+/* Hide posts on Reddit's main page only (attribute set by reddit.js).
+   Covers the current site (shreddit) and old.reddit.com. Reddit changes its markup;
+   if posts reappear, inspect the feed container and add its selector here. */
+html[data-browser-toolkit-hide-feed] shreddit-feed,
+html[data-browser-toolkit-hide-feed] #main-content shreddit-post,
+html[data-browser-toolkit-hide-feed] #main-content article,
+html[data-browser-toolkit-hide-feed] #main-content faceplate-partial[src*="feed"],
+html[data-browser-toolkit-hide-feed] shreddit-gallery-carousel,
+html[data-browser-toolkit-hide-feed] community-highlight-carousel,
+html[data-browser-toolkit-hide-feed] #siteTable,
+html[data-browser-toolkit-hide-feed] .trending-subreddits,
+html[data-browser-toolkit-hide-feed] #siteTable_organic {
+  display: none !important;
+}

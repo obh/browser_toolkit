@@ -1,0 +1,11 @@
+:root { color-scheme: light dark; font: 14px/1.5 system-ui, sans-serif; }
+body { width: 300px; margin: 0; padding: 20px; }
+h1 { font-size: 19px; margin: 0 0 20px; }
+h2 { font-size: 13px; margin: 0 0 8px; }
+label { display: flex; align-items: center; gap: 9px; font-weight: 600; }
+input { accent-color: #3e80ee; width: 16px; height: 16px; }
+p { color: light-dark(#596273, #b4bdcb); margin: 5px 0 20px 25px; font-size: 12px; }
+section { padding: 14px; background: light-dark(#f0f3f8, #242b35); border-radius: 10px; }
+output { white-space: pre-line; font-variant-numeric: tabular-nums; }
+.footnote { margin: 16px 0 0; }
+#status { color: #d45c4c; font-size: 12px; }

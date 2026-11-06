@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Browser Toolkit</title>
+    <link rel="stylesheet" href="popup.css">
+    <script src="popup.js" defer></script>
+  </head>
+  <body>
+    <h1>Browser Toolkit</h1>
+    <label><input id="youtube" type="checkbox" disabled> Hide YouTube recommendations</label>
+    <p>The related-video sidebar on watch pages.</p>
+    <label><input id="linkedin" type="checkbox" disabled> Hide LinkedIn feed</label>
+    <p>Posts on the home feed. Single posts and profiles stay visible.</p>
+    <label><input id="linkedin-tracking" type="checkbox" disabled> Block LinkedIn tracking</label>
+    <p>Analytics beacons and ad pixels. The site keeps working.</p>
+    <label><input id="linkedin-probes" type="checkbox" disabled> Hide extensions from LinkedIn</label>
+    <p>Makes LinkedIn's checks for installed extensions come back empty. Refresh LinkedIn after changing.</p>
+    <label><input id="reddit" type="checkbox" disabled> Hide Reddit main page</label>
+    <p>Posts on reddit.com itself. Popular, All, and subreddits stay visible.</p>
+    <label><input id="twitter" type="checkbox" disabled> Hide X/Twitter home feed</label>
+    <p>Posts on the home timeline. Profiles, single posts, and search stay visible.</p>
+    <label><input id="gemini" type="checkbox" disabled> Measure Gemini pastes</label>
+    <p>Shows an estimated update time after pasting.</p>
+    <section aria-labelledby="latest-heading">
+      <h2 id="latest-heading">Latest paste</h2>
+      <output id="latest">No measurement yet.</output>
+    </section>
+    <p class="footnote">Local only. Pasted text is never saved. Refresh existing tabs after installing.</p>
+    <div id="status" role="status"></div>
+  </body>
+</html>

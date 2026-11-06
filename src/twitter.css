@@ -1,0 +1,7 @@
+/* Hide posts on the X/Twitter home timeline only (attribute set by twitter.js).
+   The composer, the For you/Following tabs, and navigation stay usable.
+   Timeline cells use data-testid="cellInnerDiv"; if posts reappear, inspect the
+   timeline and update this selector. */
+html[data-browser-toolkit-hide-feed] [data-testid="primaryColumn"] section[role="region"] [data-testid="cellInnerDiv"] {
+  display: none !important;
+}

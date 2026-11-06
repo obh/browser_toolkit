@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Browser Toolkit",
+  "version": "0.1.0",
+  "description": "Hide YouTube sidebar recommendations, hide the LinkedIn feed, Reddit main page, and X/Twitter home timeline, block LinkedIn tracking and extension probing, and estimate Gemini paste responsiveness.",
+  "permissions": ["storage", "declarativeNetRequest", "scripting"],
+  "host_permissions": ["https://www.linkedin.com/*"],
+  "background": { "service_worker": "src/background.js" },
+  "declarative_net_request": {
+    "rule_resources": [
+      { "id": "linkedin_tracking", "enabled": true, "path": "rules/linkedin-tracking.json" }
+    ]
+  },
+  "action": { "default_popup": "src/popup.html", "default_title": "Browser Toolkit" },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["src/youtube.js"],
+      "css": ["src/youtube.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": ["src/hide-on-paths.js", "src/linkedin.js"],
+      "css": ["src/linkedin.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://www.reddit.com/*", "https://old.reddit.com/*"],
+      "js": ["src/hide-on-paths.js", "src/reddit.js"],
+      "css": ["src/reddit.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "js": ["src/hide-on-paths.js", "src/twitter.js"],
+      "css": ["src/twitter.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://gemini.google.com/*"],
+      "js": ["src/gemini.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

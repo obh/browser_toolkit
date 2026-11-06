@@ -1,0 +1,5 @@
+/* Hide only related videos, preserving live chat and other sidebar content.
+   The same related-video container can move below the player on narrow screens. */
+html[data-browser-toolkit-hide-related] ytd-watch-flexy #related {
+  display: none !important;
+}
